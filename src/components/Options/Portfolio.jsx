@@ -2,37 +2,34 @@ import { Doughnut } from 'react-chartjs-2';
 import React, {useState, useEffect} from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { css } from "@emotion/react";
-import ClipLoader from "react-spinners/ClipLoader";
+import {RingSpinner} from "react-spinners-kit";
 
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
-const override = css`
-  display: block;
-  margin: 50pxpx;
-`;
+// const override = css`
+//   display: block;
+//   margin: 50pxpx;
+//   padding-left: 50%;
+// `;
 
 function Portfolio() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
-        }, 5000)
-    }, [])
+        const timeout = setTimeout(() => {
+            setLoading(true)
+          }, 5000)
+      
+          return () => clearTimeout(timeout)
+      
+        }, [loading])
 
-    return (
-        <div className="App">
-            {
-                loading ?
-
-                    <ClipLoader color={"#aa131c"} loading={loading} size={60} css={override} />
-                    :
+        if (!loading) return(<center><RingSpinner size={60} color="#a11d24" loading={true} /></center>)
+    return (<div><center>
                     <Doughnut
-                        width={400}
-                        height={400}
+                        width={350}
+                        height={350}
                         data={{
                             labels: ['Stocks', 'Mutual Funds', 'Debt', 'Cash'],
                             datasets: [
@@ -80,10 +77,9 @@ function Portfolio() {
                                 }
                               },
                         }}
-                    />
-
-            }
-        </div>);
+                    /></center>
+                    </div>
+            );
     
   }
 export default Portfolio;
