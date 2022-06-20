@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {RingSpinner} from "react-spinners-kit";
+// import { useScrollBy } from "react-use-window-scroll";
 
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
@@ -25,11 +26,12 @@ function Portfolio() {
       
         }, [loading])
 
+
         if (!loading) return(<center><RingSpinner size={60} color="#a11d24" loading={true} /></center>)
     return (<div><center>
                     <Doughnut
-                        width={350}
-                        height={350}
+                        width={300}
+                        height={300}
                         data={{
                             labels: ['Stocks', 'Mutual Funds', 'Debt', 'Cash'],
                             datasets: [
@@ -52,6 +54,7 @@ function Portfolio() {
                             ]
                         }}
                         options={{
+                            radius: '90%',
                             responsive: false,
                             legend: {
                                 position: 'Right',
@@ -72,7 +75,7 @@ function Portfolio() {
                                   },
                                   font: {
                                     weight: 'bold',
-                                    size: 16,
+                                    size: 12,
                                   }
                                 }
                               },
