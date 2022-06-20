@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/robo-advisor-update/static/css/main.bf33ccdb.css",
+    "main.css": "/robo-advisor-update/static/css/main.12c35e06.css",
     "main.js": "/robo-advisor-update/static/js/main.747d37a4.js",
-    "static/media/background2.png": "/robo-advisor-update/static/media/background2.52af65f5ee59c32aa0aa.png",
+    "static/media/background2.png": "/robo-advisor-update/static/media/background2.364962591840391c3cc8.png",
     "index.html": "/robo-advisor-update/index.html",
-    "main.bf33ccdb.css.map": "/robo-advisor-update/static/css/main.bf33ccdb.css.map",
+    "main.12c35e06.css.map": "/robo-advisor-update/static/css/main.12c35e06.css.map",
     "main.747d37a4.js.map": "/robo-advisor-update/static/js/main.747d37a4.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf33ccdb.css",
+    "static/css/main.12c35e06.css",
     "static/js/main.747d37a4.js"
   ]
 }
