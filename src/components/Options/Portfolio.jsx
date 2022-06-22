@@ -1,6 +1,6 @@
 import { Doughnut } from 'react-chartjs-2';
 // import React, {useState, useEffect, useRef} from "react";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {RingSpinner} from "react-spinners-kit";
@@ -19,6 +19,9 @@ function Portfolio() {
     const [loading, setLoading] = useState(false);
     // const inputElement = useRef();
     // window.scrollTo(0,document.body.scrollHeight);
+    const testRef = useRef(null);
+    const scrollToElement = () => testRef.current.scrollIntoView();
+
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -31,8 +34,9 @@ function Portfolio() {
 
         
         if (!loading) return(<center><RingSpinner size={60} color="#a11d24" loading={true} /></center>)
-    return (<><center>
+    return (<div ref={testRef}><center>
                     <Doughnut
+                        onLoad={scrollToElement}
                         width={300}
                         height={300}
                         data={{
@@ -83,7 +87,7 @@ function Portfolio() {
                                 }
                               },
                         }}
-                    /></center></>
+                    /></center></div>
             );    
   }
 
