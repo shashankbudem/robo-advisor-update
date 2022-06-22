@@ -1,6 +1,6 @@
 import React from 'react';
 import { createChatBotMessage } from 'react-chatbot-kit';
-import Todos from './components/Todos/Todos';
+// import Todos from './components/Todos/Todos';
 import GeneralOptions from './components/Options/Generaloptions';
 import Financial from './components/Options/Financial';
 // import Investing from './components/Options/Risktolerance';
@@ -17,18 +17,13 @@ const config = {
     createChatBotMessage(`Let us start our journey by letting me know about you.`),
     createChatBotMessage(`What is your Name?`)
   ],
-  botName:"idfc roboadvisor",
+  botName:"ROBO FIRST",
 
 
   state: {
     todos:[]
   },
   widgets:[
-    {
-      widgetName: "todos",
-      widgetFunc: (props) => <Todos {...props}/>,
-      mapStateToProps: ["todos"],
-    },
     {
       widgetName:"options",
       widgetFunc: (props) => <GeneralOptions {...props}/>

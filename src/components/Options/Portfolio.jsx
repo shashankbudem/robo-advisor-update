@@ -1,4 +1,5 @@
 import { Doughnut } from 'react-chartjs-2';
+// import React, {useState, useEffect, useRef} from "react";
 import React, {useState, useEffect} from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
@@ -16,19 +17,20 @@ ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 function Portfolio() {
     const [loading, setLoading] = useState(false);
+    // const inputElement = useRef();
+    // window.scrollTo(0,document.body.scrollHeight);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
             setLoading(true)
           }, 5000)
-      
+
           return () => clearTimeout(timeout)
       
         }, [loading])
 
-
         if (!loading) return(<center><RingSpinner size={60} color="#a11d24" loading={true} /></center>)
-    return (<div><center>
+    return (<><center>
                     <Doughnut
                         width={300}
                         height={300}
@@ -80,9 +82,8 @@ function Portfolio() {
                                 }
                               },
                         }}
-                    /></center>
-                    </div>
-            );
-    
+                    /></center></>
+            );    
   }
+
 export default Portfolio;
