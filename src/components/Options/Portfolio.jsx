@@ -29,6 +29,7 @@ function Portfolio() {
       
         }, [loading])
 
+        
         if (!loading) return(<center><RingSpinner size={60} color="#a11d24" loading={true} /></center>)
     return (<><center>
                     <Doughnut
