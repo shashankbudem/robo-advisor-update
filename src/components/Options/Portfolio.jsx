@@ -4,21 +4,13 @@ import React, {useState, useEffect, useRef} from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {RingSpinner} from "react-spinners-kit";
-// import { useScrollBy } from "react-use-window-scroll";
 
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
-// const override = css`
-//   display: block;
-//   margin: 50pxpx;
-//   padding-left: 50%;
-// `;
 
 function Portfolio() {
     const [loading, setLoading] = useState(false);
-    // const inputElement = useRef();
-    // window.scrollTo(0,document.body.scrollHeight);
     const testRef = useRef(null);
     const scrollToElement = () => testRef.current.scrollIntoView();
 

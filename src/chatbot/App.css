@@ -12,8 +12,6 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  
-  
 }
 
 .react-chatbot-kit-chat-container {
@@ -26,6 +24,14 @@
   margin-left: 30%;
 
 }
+
+/* .react-chatbot-kit-chat-container {
+  position: relative;
+  width: 350px;
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.237);
+  margin-left: 9%;
+  border-radius: 5px;
+} */
 
 .react-chatbot-kit-chat-inner-container {
   
