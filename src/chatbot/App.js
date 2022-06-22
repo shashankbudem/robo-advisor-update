@@ -1,4 +1,4 @@
-// import React, {useState, useEffect} from "react";
+import React from "react";
 import Chatbot from "react-chatbot-kit";
 import 'react-chatbot-kit/build/main.css';
 // import { css } from "@emotion/react";
@@ -11,7 +11,7 @@ import "./App.css";
 
 
 function App() {
-  
+
   return (
     <div className="App">
       
